@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Recommended Ad{% endblock %}
+{% block content %}
+  {% if ad %}
+  <div class="text-center">
+    <h1>Recommended Ad</h1>
+    <img style="height: 32rem; width: auto;" src="{{ url_for('static', filename='img/categories/' + ad) }}" class="img-thumbnail" alt="{{ url_for('static', filename='img/nothing_to_show.gif') }}">
+  </div>
+  <sub>{{ ad }}</sub>
+  <div>
+    <form action="/clicked" method="post">
+      <input type="hidden" name="ad" value="{{ ad }}">
+      <button type="submit" style="margin-top: 15px;">Click Here</button>
+    </form>
+  </div>
+  {% else %}
+  <div>
+    <h2>Sorry, there are no ads to display</h2>
+  </div>
+  {% endif %}
+{% endblock %}

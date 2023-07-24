@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ad Recommendation System</title>
+  </head>
+  <body>
+    <h1>Welcome to the Ad Recommendation System</h1>
+    {% if ad %}
+    <div>
+      <h2>Recommended Ad</h2>
+      <img src="{{ url_for('static', filename='img/' + ad) }}" alt="Ad">
+    </div>
+    <div>
+      <form action="/clicked" method="post">
+        <input type="hidden" name="ad" value="{{ ad }}">
+        <button type="submit">Click Here</button>
+      </form>
+    </div>
+    {% else %}
+    <div>
+      <h2>Sorry, there are no ads to display</h2>
+    </div>
+    {% endif %}
+  </body>
+</html>

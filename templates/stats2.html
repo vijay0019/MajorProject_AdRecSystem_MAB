@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Ad Stats{% endblock %}
+{% block content %}
+    <h1>Stats</h1>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Category</th>
+            <th scope="col">Impressions</th>
+            <th scope="col">Clicks</th>
+            <th scope="col">CTR</th>
+          </tr>
+        </thead>
+            {% for row in rows %}
+            <tr>
+                <td scope="row">{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                {% if row[2] %}
+                  <td>{{ (row[1]/row[2])|round(2) }}</td>
+                {% else %}
+                  <td>0.0</td>  
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

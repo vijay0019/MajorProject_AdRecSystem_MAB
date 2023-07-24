@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<ul class="nav nav-pills nav-justified"
+		style="padding: 20px; border: 2px solid black; background-color: lightgray;">
+		<li class="nav-item">
+			<a {% if request.path=='/' %} class="active nav-link" {% else %} class="nav-link" {% endif %} href="/">Home</a>
+		</li>
+		<li class="nav-item">
+			<a {% if request.path=='/ad_thompson_eps' %} class="active nav-link" {% else %} class="nav-link" {% endif %} href="/ad_thompson_eps">Recommended Ad</a>
+		</li>
+		<li class="nav-item">
+			<a {% if request.path=='/stats' %} class="active nav-link" {% else %} class="nav-link" {% endif %} href="/stats">Ad Stats</a>
+		</li>
+	</ul>
+	<h1 style="text-align: center; padding: 20px;">Ad Recommendation System</h1>
+	<title>{% block title %}{% endblock %}</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+</head>
+
+<body style="text-align: center; background-color:lavender;">
+	{% block content %}{% endblock %}
+</body>
+</html>
