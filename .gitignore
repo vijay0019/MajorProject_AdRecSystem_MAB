@@ -48,5 +48,4 @@ dist/**
 package.nls.*.json
 l10n/
 
-*.gif
 *.jpg

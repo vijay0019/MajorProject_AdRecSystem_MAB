@@ -3,10 +3,10 @@ import os
 
 
 # Rename all image files
-# base_dir = "static/img/categories"
-# for cat in os.listdir(base_dir):
-#     for index, file_name in enumerate(os.listdir(f"{base_dir}/{cat}")):
-#         os.rename(f"{base_dir}/{cat}/{file_name}", f"{base_dir}/{cat}/{cat}_{index}.jpg")
+base_dir = "static/img/categories"
+for cat in os.listdir(base_dir):
+    for index, file_name in enumerate(os.listdir(f"{base_dir}/{cat}")):
+        os.rename(f"{base_dir}/{cat}/{file_name}", f"{base_dir}/{cat}/{cat}_{index}.jpg")
 
 
 # Open a connection to the database
